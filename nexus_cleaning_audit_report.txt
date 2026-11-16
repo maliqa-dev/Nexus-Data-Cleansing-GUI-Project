@@ -1,0 +1,68 @@
+==========================================================================
+PHASE 1: INITIAL DATASET TELEMETRY & ANOMALY DETECTION
+==========================================================================
+Source File       : customer_shopping_data.csv.csv
+Dataset Shape     : 99,457 rows x 10 columns
+Duplicate Records : 0 (No duplicate values found)
+Missing Cells     : 0
+
+--- Missing Values Per Column (Before Cleaning) ---
+invoice_no        0
+customer_id       0
+gender            0
+age               0
+category          0
+quantity          0
+price             0
+payment_method    0
+invoice_date      0
+shopping_mall     0
+
+--- Schema & Data Types ---
+invoice_no            str
+customer_id           str
+gender                str
+age                 int64
+category              str
+quantity            int64
+price             float64
+payment_method        str
+invoice_date          str
+shopping_mall         str
+
+◈ Ready for cleansing. Click '2. Run Smart Pipeline' to execute.
+
+==========================================================================
+PHASE 2: EXECUTING 6-STAGE SMART DATA CLEANSING PIPELINE
+==========================================================================
+[01] Whitespace & Null Trim   : Stripped leading/trailing spaces & normalized null tokens.
+[02] Duplicate Verification   : No duplicate values found (0 rows removed).
+[03] Type & Domain Integrity  : Enforced numeric dtypes; 0 invalid negative values handled.
+[04] Missing Value Imputation : Missing cells reduced from 0 -> 0 (Median/Mode).
+[05] Categorical Uniformity   : Standardized text categories to Title Case.
+[06] IQR Outlier Flagging     : 'age' -> 0 statistical outliers flagged.
+[06] IQR Outlier Flagging     : 'quantity' -> 0 statistical outliers flagged.
+[06] IQR Outlier Flagging     : 'price' -> 5,024 statistical outliers flagged.
+
+==========================================================================
+PHASE 3: POST-CLEANSING VALIDATION REPORT (AFTER CLEANING)
+==========================================================================
+Final Dimensions          : 99,457 rows x 13 columns
+Validation - Zero Missing : PASS
+Validation - No Duplicates: PASS
+
+--- Missing Values Per Column (After Cleaning) ---
+invoice_no              0
+customer_id             0
+gender                  0
+age                     0
+category                0
+quantity                0
+price                   0
+payment_method          0
+invoice_date            0
+shopping_mall           0
+age_OutlierFlag         0
+quantity_OutlierFlag    0
+price_OutlierFlag       0
+
